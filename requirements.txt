@@ -7,3 +7,5 @@ torch#torchなん？
 huggingface_hub
 transformers
 sentencepiece
+#何故か「pip install truecase pyhocon scipy huggingface_hub transformers sentencepiece --no-cache-dir」
+#で2回目解決する謎．
