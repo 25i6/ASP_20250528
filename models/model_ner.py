@@ -66,7 +66,7 @@ class NERWrapper(torch.nn.Module):
             return
         # prepare the model for parallel training
         if (not self.model.t5.model_parallel or
-                self.model.action_head.weight.get_device() != self.device):
+                self.model.action_head[0].weight.get_device() != self.device):#変更．_head.weight.get_device() != self.device):
             logger.info(
                 f"Moving model to {self.device} and parallelize for training"
             )
@@ -90,7 +90,7 @@ class NERWrapper(torch.nn.Module):
             self.model = self.model.cuda()
             return
         # prepare the model for parallel inference
-        if self.model.action_head.weight.get_device() != self.device:
+        if self.model.action_head[0].weight.get_device() != self.device:#変更．head.weight.get_device() != self.device:
             logger.info(
                 f"Moving model from {self.model.action_head.weight.get_device()} to {self.device} for inference"
             )
