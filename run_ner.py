@@ -49,7 +49,7 @@ class NERRunner(Runner):
             example_gpu['is_training'][:] = 0
 
             with torch.no_grad(), torch.cuda.amp.autocast(
-                enabled=self.use_amp, dtype=torch.float16#変更　bfloat16
+                enabled=self.use_amp, dtype=torch.float16#.bfloat16
             ):
                 output = model(**example_gpu)
 

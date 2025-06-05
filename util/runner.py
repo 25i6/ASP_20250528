@@ -142,7 +142,7 @@ class Runner:
                     if v is not None:
                         example_gpu[k] = v.to(self.device)
                 with torch.cuda.amp.autocast(
-                    enabled=self.use_amp, dtype=torch.bfloat16
+                    enabled=self.use_amp, dtype=torch.float16#.bfloat16
                 ):
                     loss = wrapper(**example_gpu) / grad_accum
                 # Backward; accumulate gradients and clip by grad norm
@@ -246,7 +246,7 @@ class Runner:
             grouped_param,
             lr=self.config['plm_learning_rate'],
             eps=self.config['adam_eps'],
-            fused=True
+            #fused=True 変更．
         )
         return optimizer
 
