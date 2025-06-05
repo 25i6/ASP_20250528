@@ -1,10 +1,11 @@
-truecase
-tqdm
-pyhocon
-scipy
-numpy<2.0
-#python==3.8
-#pytorch==1.12
-huggingface_hub==0.10.1
-transformers==4.23.1
-sentencepiece==0.1.96
+# truecase
+# tqdm
+# pyhocon
+# scipy
+# numpy
+# torch#torchなん？
+# huggingface_hub
+# transformers
+# sentencepiece
+# #何故か「pip install truecase pyhocon scipy huggingface_hub transformers sentencepiece --no-cache-dir」
+# #で2回目解決する謎．
