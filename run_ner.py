@@ -87,7 +87,7 @@ class NERRunner(Runner):
 
 # python run_ner.py t5_base 0
 if __name__ == '__main__':
-    config_name, gpu_id = sys.argv[1], int(sys.argv[2])
+    config_name, gpu_id = sys.argv[1], int(sys.argv[2])#変更してない．引数0の意味．
     saved_suffix = sys.argv[3] if len(sys.argv) >= 4 else None
     runner = NERRunner(
         config_file="configs/ner.conf",
