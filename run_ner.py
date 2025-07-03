@@ -25,10 +25,10 @@ class NERRunner(Runner):
     def evaluate(self, model, tensor_examples, stored_info, step, predict=False):
         evaluator = EREEvaluator()
 
-        eval_batch_size = 16
+        eval_batch_size = 8#16変更．2025年7月3日．
         if any(substr in self.config["plm_pretrained_name_or_path"].lower()\
            for substr in ["pp", "11b", "3b", "xl", "xxl", "large"]):
-            eval_batch_size = 16
+            eval_batch_size = 8#16変更．2025年7月3日．
 
         util.runner.logger.info('Step %d: evaluating on %d samples with batch_size %d' % (
             step, len(tensor_examples), eval_batch_size))

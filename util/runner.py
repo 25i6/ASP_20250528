@@ -40,6 +40,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__file__)
 
+torch.cuda.set_device(1)#変更．2025年7月3日．
 
 class Runner:
     def __init__(self, config_file, config_name, gpu_id=1, seed=None):#変更．
