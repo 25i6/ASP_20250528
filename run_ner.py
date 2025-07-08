@@ -19,7 +19,7 @@ from util.runner import Runner
 
 from metrics import EREEvaluator
 
-torch.cuda.set_device(1)#変更．2025年7月3日．
+torch.cuda.set_device(0)#変更．2025年7月3日．
 
 class NERRunner(Runner):
 
